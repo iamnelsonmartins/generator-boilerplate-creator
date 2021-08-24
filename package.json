@@ -1,0 +1,28 @@
+{
+  "name": "generator-boilerplate-creator",
+  "version": "1.0.0",
+  "description": "Project boilerplate generator with Gulp and Sass",
+  "author": {
+    "name": "Nelson Martins"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "devDependencies": {
+    "yeoman-assert": "^3.1.1"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamnelsonmartins/generator-boilerplate-creator.git"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "mkdirp": "^1.0.4",
+    "yeoman-generator": "^5.4.2"
+  },
+  "license": "MIT"
+}
