@@ -4,7 +4,7 @@
 
 # Quick Start
 
-### Install Yeoman, Gulp and Project-Boilerplate
+### Install Yeoman, Gulp and boilerplate-creator
 
 ```bash
 $ npm i -g yo gulp-cli generator-boilerplate-creator
@@ -16,10 +16,10 @@ $ npm i -g yo gulp-cli generator-boilerplate-creator
 $ mkdir PROJECT_NAME && cd $_
 ```
 
-### Run project-boilerplate
+### Run boilerplate-creator
 
 ```bash
-$ yo project-boilerplate
+$ yo boilerplate-creator
 ```
 
 ## License
