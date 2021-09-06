@@ -1,6 +1,6 @@
 # generator-boilerplate-creator [![NPM version][npm-image]][npm-url]
 
-> Project boilerplate generator with Gulp and Sass
+> Project boilerplate generator with Gulp + Sass + Typescript
 
 # Quick Start
 
