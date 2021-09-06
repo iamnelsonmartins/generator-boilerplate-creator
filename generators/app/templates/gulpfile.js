@@ -4,9 +4,9 @@ const sass = require('gulp-sass')(require('sass'))
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
-const babel = require('gulp-babel')
-const terser = require('gulp-terser')
 const browsersync = require('browser-sync').create()
+const ts = require('gulp-typescript')
+const tsProject = ts.createProject('tsconfig.json')
 
 // Sass Task
 function scssTask() {
@@ -16,12 +16,8 @@ function scssTask() {
     .pipe(dest('dist', { sourcemaps: '.' }))
 }
 
-// JavaScript Task
-function jsTask() {
-  return src('app/js/script.js', { sourcemaps: true })
-    .pipe(babel({ presets: ['@babel/preset-env'] }))
-    .pipe(terser())
-    .pipe(dest('dist', { sourcemaps: '.' }))
+function tsTask() {
+  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist'))
 }
 
 // Browsersync
@@ -54,10 +50,10 @@ function browserSyncReload(cb) {
 function watchTask() {
   watch('*.html', browserSyncReload)
   watch(
-    ['app/scss/**/*.scss', 'app/**/*.js'],
-    series(scssTask, jsTask, browserSyncReload)
+    ['app/scss/**/*.scss', 'app/**/*.ts'],
+    series(scssTask, tsTask, browserSyncReload)
   )
 }
 
 // Default Gulp Task
-exports.default = series(scssTask, jsTask, browserSyncServe, watchTask)
+exports.default = series(scssTask, tsTask, browserSyncServe, watchTask)
