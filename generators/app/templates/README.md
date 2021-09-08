@@ -1,3 +1,3 @@
-# Gulp Sass Boilerplate
+# Gulp Sass Typescript Boilerplate
 
-Simple boilerplate with Gulp+Sass for simple webpages
+Simple boilerplate with Gulp+Sass+Typescript for simple webpages
