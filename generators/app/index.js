@@ -47,6 +47,12 @@ module.exports = class extends Generator {
       this.props
     )
 
+    this.fs.copyTpl(
+      this.templatePath('tsconfig.json'),
+      this.destinationPath('tsconfig.json'),
+      this.props
+    )
+
     this.fs.copy(this.templatePath('app'), this.destinationPath('app'))
 
     this.fs.copy(
