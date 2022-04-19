@@ -2,20 +2,14 @@
 const Generator = require('yeoman-generator')
 const mkdirp = require('mkdirp')
 const path = require('path')
-const chalk = require('chalk')
 
 module.exports = class extends Generator {
   prompting() {
     this.log('')
-    this.log(
-      chalk.inverse.bold.white(
-        '  Welcome to File Generator with Gulp+Sass+TypeScript '
-      )
-    )
+    this.log(' ==== Welcome to File Generator with Gulp+Sass+TypeScript ==== ')
     this.log('')
-    this.log(
-      chalk.inverse.white(' Select your project name and a little description ')
-    )
+    this.log(' ==== Select your project name and a little description ==== ')
+
     const prompts = [
       {
         name: 'name',
@@ -35,7 +29,8 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.log(chalk.inverse.white(' Copying Files '))
+    this.log(' ==== Copying Files ==== ')
+
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
@@ -73,11 +68,7 @@ module.exports = class extends Generator {
 
   end() {
     this.log('')
-    this.log(chalk.inverse.bold.white(' Thats All Folks! '))
-    this.log(
-      chalk.inverse.bold.white(
-        ' Run `gulp` in this project directory to run Gulp!'
-      )
-    )
+    this.log(' ==== Thats All Folks! ==== ')
+    this.log(' ==== Run `gulp` in this project directory to run Gulp! ==== ')
   }
 }
