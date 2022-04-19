@@ -17,7 +17,7 @@ function scssTask() {
 }
 
 function tsTask() {
-  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist/scripts'))
+  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist/code'))
 }
 
 // Browsersync
