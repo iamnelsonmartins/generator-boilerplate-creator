@@ -10,14 +10,14 @@ const tsProject = ts.createProject('tsconfig.json')
 
 // Sass Task
 function scssTask() {
-  return src('app/scss/style.scss', { sourcemaps: true })
+  return src('app/scss/style.scss', { sourcemaps: false })
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest('dist', { sourcemaps: '.' }))
+    .pipe(dest('dist/css', { sourcemaps: '.' }))
 }
 
 function tsTask() {
-  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist'))
+  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist/code'))
 }
 
 // Browsersync
@@ -48,7 +48,7 @@ function browserSyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-  watch('*.html', browserSyncReload)
+  watch('dist/*.html', browserSyncReload)
   watch(
     ['app/scss/**/*.scss', 'app/ts/*.ts'],
     series(scssTask, tsTask, browserSyncReload)

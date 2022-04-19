@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log('')
     this.log(
       chalk.inverse.bold.white(
-        '  Welcome to File Generator with Gulp and Sass  '
+        '  Welcome to File Generator with Gulp+Sass+TypeScript '
       )
     )
     this.log('')
@@ -62,7 +62,7 @@ module.exports = class extends Generator {
 
     this.fs.copy(
       this.templatePath('index.html'),
-      this.destinationPath('index.html')
+      this.destinationPath('dist/index.html')
     )
 
     this.fs.copy(
