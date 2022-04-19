@@ -10,14 +10,14 @@ const tsProject = ts.createProject('tsconfig.json')
 
 // Sass Task
 function scssTask() {
-  return src('app/scss/style.scss', { sourcemaps: false })
+  return src('app/scss/style.scss', { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest('dist/css', { sourcemaps: '.' }))
 }
 
 function tsTask() {
-  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist/code'))
+  return tsProject.src().pipe(tsProject()).js.pipe(dest('dist/scripts'))
 }
 
 // Browsersync
