@@ -1,7 +1,7 @@
 {
-  "name": "<%=name%>",
-  "version": "1.0.13",
-  "description": "<%=description%>",
+  "name": "DEFAULT_NAME",
+  "version": "1.0.14",
+  "description": "DEFAULT_DESC",
   "keywords": [],
   "author": "Nelson Martins (iamnelsonmartins)",
   "license": "ISC",

@@ -4,31 +4,10 @@ const mkdirp = require('mkdirp')
 const path = require('path')
 
 module.exports = class extends Generator {
-  prompting() {
+  writing() {
     this.log('')
     this.log(' ==== Welcome to File Generator with Gulp+Sass+TypeScript ==== ')
     this.log('')
-    this.log(' ==== Select your project name and a little description ==== ')
-
-    const prompts = [
-      {
-        name: 'name',
-        message: 'Your project name',
-        default: 'new-project',
-      },
-      {
-        name: 'description',
-        message: 'Your project description',
-        default: 'TODO',
-      },
-    ]
-
-    return this.prompt(prompts).then((props) => {
-      this.props = props
-    })
-  }
-
-  writing() {
     this.log(' ==== Copying Files ==== ')
 
     this.fs.copy(
@@ -38,14 +17,12 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('package.json'),
-      this.destinationPath('package.json'),
-      this.props
+      this.destinationPath('package.json')
     )
 
     this.fs.copyTpl(
       this.templatePath('tsconfig.json'),
-      this.destinationPath('tsconfig.json'),
-      this.props
+      this.destinationPath('tsconfig.json')
     )
 
     this.fs.copy(this.templatePath('app'), this.destinationPath('app'))
