@@ -1,6 +1,6 @@
 {
   "name": "generator-boilerplate-creator",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Project boilerplate generator with Gulp + Sass + TypeScript",
   "author": {
     "name": "Nelson Martins"
